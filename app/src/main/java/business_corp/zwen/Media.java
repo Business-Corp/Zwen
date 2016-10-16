@@ -11,6 +11,7 @@ public class Media {
     private Integer id;
     private boolean idEingetragen=false;
     private String subtitle;
+    private String bescheibung;
 
     public Media(String nameC,String subtitleC ,Integer typeC){
         name=nameC;
@@ -18,10 +19,11 @@ public class Media {
         type=typeC;
 
     }
-    //------------------------------------------
+    //-----------------------------------------------------------------------------------------
     public String getName(){
         return name;
     }
+    public String getBescheibung(){return  bescheibung;}
     public Integer getType(){
         return type;
     }
@@ -31,7 +33,7 @@ public class Media {
     public String getSubtitle(){
         return subtitle;
     }
-    //------------------------------------------
+    //-----------------------------------------------------------------------------------------
     public void setName(String string){
         name=string;
     }
@@ -44,7 +46,10 @@ public class Media {
             idEingetragen=true;
         }
     }
-    //test kommentar
+    public void setBescheibung(String string){
+        bescheibung=string;
+    }
+    //------------------------------------------------------------------------------------------
     public void setSubtitle(String string){
         subtitle=string;
     }
