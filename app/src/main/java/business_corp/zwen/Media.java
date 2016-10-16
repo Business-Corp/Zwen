@@ -7,12 +7,12 @@ package business_corp.zwen;
 public class Media {
 
     private String name;
-    private String type;
+    private Integer type;
     private Integer id;
     private boolean idEingetragen=false;
     private String subtitle;
 
-    public Media(String nameC,String subtitleC ,String typeC){
+    public Media(String nameC,String subtitleC ,Integer typeC){
         name=nameC;
         subtitle=subtitleC;
         type=typeC;
@@ -22,7 +22,7 @@ public class Media {
     public String getName(){
         return name;
     }
-    public String getType(){
+    public Integer getType(){
         return type;
     }
     public Integer getId(){
@@ -35,7 +35,7 @@ public class Media {
     public void setName(String string){
         name=string;
     }
-    public void setType(String string){
+    public void setType(Integer string){
         type=string;
     }
     public void setId(Integer integer){
