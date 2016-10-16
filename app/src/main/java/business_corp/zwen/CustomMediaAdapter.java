@@ -27,6 +27,7 @@ public class CustomMediaAdapter extends ArrayAdapter<Media> {
     }
 
     public View getView(int position, View convertview, ViewGroup parent){
+
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View rowViev=inflater.inflate(R.layout.list_item_mediathek,parent,false);
@@ -41,9 +42,15 @@ public class CustomMediaAdapter extends ArrayAdapter<Media> {
         name.setText(media.getName());
         subtitle.setText(media.getSubtitle());
 
-        logo.setImageResource(media.getId());
+        if(media.getType()==1){
+            logo.setImageResource(R.drawable.movie);
+        }else if(media.getType()==2){
+            logo.setImageResource(R.drawable.series);
+        }
+        //logo.setImageResource(media.getId());
 
-        return null;
+        return rowViev;
+
     }
 
 }
