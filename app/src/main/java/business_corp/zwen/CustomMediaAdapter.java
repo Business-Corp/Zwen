@@ -34,8 +34,8 @@ public class CustomMediaAdapter extends ArrayAdapter<Media> {
 
         ImageView logo = (ImageView)rowViev.findViewById(R.id.logo);
         //logo.setImageResource(R.drawable.);
-        TextView name = (TextView)rowViev.findViewById(R.id.nameTextView);
-        TextView subtitle = (TextView)rowViev.findViewById(R.id.subtiteltextView);
+        TextView name = (TextView)rowViev.findViewById(R.id.subtiteltextView);
+        TextView subtitle = (TextView)rowViev.findViewById(R.id.nameTextView);
 
         Media media = datensatzMedia.get(position);
 
