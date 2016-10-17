@@ -1,10 +1,12 @@
 package business_corp.zwen;
 
+import java.io.Serializable;
+
 /**
  * Created by Höling on 16.10.2016.
  */
 
-public class Media {
+public class Media implements Serializable{
 
     private String name;
     private Integer type;

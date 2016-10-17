@@ -2,7 +2,7 @@ package business_corp.zwen;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.AutoCompleteTextView;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,7 +18,8 @@ public class MediaIntent extends AppCompatActivity{
 
 
         Object object = getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE);
-        Media media = new Media("test","test",1);
+        Media media = new Media("test","test",2);
+
 
         if(object.getClass()==Media.class){
 
@@ -40,10 +41,13 @@ public class MediaIntent extends AppCompatActivity{
             typImage.setImageResource(R.drawable.series);
         }
 
-        /*
-        AutoCompleteTextView beschreibungEdit = (AutoCompleteTextView)findViewById(R.id.mediaIntent_autoCompleteTextView);
-        beschreibungEdit.setText(media.getBescheibung());
-        */
+
+        TextView beschreibungEdit = (TextView)findViewById(R.id.mediaIntent_beschreibungEdit);
+        media.setBescheibung("blah blah beschreibung");
+        media.setId(13);
+        beschreibungEdit.setText(media.getBescheibung()+" und ID: "+media.getId());
+
+       Integer mediaID = media.getId();
 
 
     }

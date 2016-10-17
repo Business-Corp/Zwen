@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra(MainActivity.EXTRA_MESSAGE, (Serializable) media);
                 //Toast.makeText(getApplicationContext(), "blah", Toast.LENGTH_LONG).show();
-
+                startActivity(intent);
 
             }
         });

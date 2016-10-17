@@ -83,14 +83,19 @@
         android:layout_marginTop="67dp"
         android:id="@+id/textView7" />
 
-    <AutoCompleteTextView
-        android:text="AutoCompleteTextView"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@+id/mediaIntent_imageView2"
-        android:layout_alignRight="@+id/mediaIntent_subtitelEdit"
-        android:layout_alignEnd="@+id/mediaIntent_subtitelEdit"
-        android:layout_marginTop="55dp"
-        android:id="@+id/mediaIntent_autoCompleteTextView" />
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView7"
+        android:layout_toRightOf="@+id/mediaIntent_imageView2"
+        android:layout_toEndOf="@+id/mediaIntent_imageView2"
+        android:id="@+id/mediaIntent_beschreibungEdit"
+        android:enabled="true"
+        android:fadeScrollbars="true"
+        android:hapticFeedbackEnabled="true"
+        android:isScrollContainer="true" />
 
 </RelativeLayout>
