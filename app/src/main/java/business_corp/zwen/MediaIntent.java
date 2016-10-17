@@ -46,8 +46,8 @@ public class MediaIntent extends AppCompatActivity{
 
 
         TextView beschreibungEdit = (TextView)findViewById(R.id.mediaIntent_beschreibungEdit);
-        media.setBescheibung("blah blah beschreibung");
-        media.setId(13);
+        //media.setBescheibung("blah blah beschreibung");
+        //media.setId(13);
         beschreibungEdit.setText(media.getBescheibung()+" und ID: "+media.getId());
         beschreibungEdit.setSingleLine(false);
 

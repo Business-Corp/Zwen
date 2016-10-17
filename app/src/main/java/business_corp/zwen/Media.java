@@ -21,6 +21,13 @@ public class Media implements Serializable{
         type=typeC;
 
     }
+    public Media(Integer idC, String nameC, String subtitelC, Integer typeC, String beschreibungC){
+        id=idC;
+        name=nameC;
+        subtitle=subtitelC;
+        bescheibung=beschreibungC;
+        type=typeC;
+    }
     //-----------------------------------------------------------------------------------------
     public String getName(){
         return name;
