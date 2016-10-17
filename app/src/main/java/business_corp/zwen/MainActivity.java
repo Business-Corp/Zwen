@@ -29,24 +29,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         datensaetze=new ArrayList<Media>();
-        datensaetze.add(new Media("TestName","Subtitel Test",1));
-        datensaetze.add(new Media("Seriee","2ter eintrag",2));
+        //datensaetze.add(new Media("TestName","Subtitel Test",1));
+        //datensaetze.add(new Media("Seriee","2ter eintrag",2));
         //ItemDBHelper dbHelper = new ItemDBHelper();
         //datensaetze.addAll(dbHelper.getAllMedia());
 
         SQLiteDatabase db = openOrCreateDatabase("Zwen", MODE_PRIVATE, null);
 
-        //db.execSQL("DROP TABLE IF EXISTS Zwen.Media");
+        db.execSQL("DROP TABLE IF EXISTS Zwen.Media");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS Media(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Name VARCHAR NOT NULL, Subtitle VARCHAR, Typ INTEGER, Beschreibung TEXT);");
         Integer integer = R.drawable.movie;
-        //db.execSQL("INSERT INTO Media (Name, Subtitle, Typ) VALUES ('TestFilm','subTestTitel',"+integer+");");
+        db.execSQL("INSERT INTO Media (Name, Subtitle, Typ, Beschreibung) VALUES ('TestFilm','subTestTitel',"+integer+",'Testbeschreibung und so');");
 
         Cursor resultSet = db.rawQuery("SELECT * FROM Media", null);
 
         if (resultSet.moveToFirst()){
 
-            datensaetze.add(new Media(resultSet.getType(0),resultSet.getString(1),resultSet.getString(2),1,resultSet.getString(4)));
+            datensaetze.add(new Media(resultSet.getType(0),resultSet.getString(1),resultSet.getString(2),resultSet.getType(3),resultSet.getString(4)));
 
         }else{
 
