@@ -1,16 +1,25 @@
 package business_corp.zwen;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public final static String EXTRA_MESSAGE = "MediaIntent";
+
     private ListView mediathek;
     private ArrayList<Media> datensaetze;
     private CustomMediaAdapter listAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +38,25 @@ public class MainActivity extends AppCompatActivity {
         mediathek.setAdapter(listAdapter);
 
 
+
+
+
+        mediathek.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                Intent intent = new Intent(MainActivity.this, MediaIntent.class);
+                Media media =(Media) mediathek.getItemAtPosition(position);
+
+                intent.putExtra(MainActivity.EXTRA_MESSAGE, (Serializable) media);
+                //Toast.makeText(getApplicationContext(), "blah", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+
+            }
+        });
+
+
     }
+
 }
