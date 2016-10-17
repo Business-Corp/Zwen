@@ -3,6 +3,7 @@ package business_corp.zwen;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,8 @@ import android.widget.TextView;
  */
 
 public class MediaIntent extends AppCompatActivity{
+
+    private Media actualMedia;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -24,7 +27,7 @@ public class MediaIntent extends AppCompatActivity{
         if(object.getClass()==Media.class){
 
            media=(Media)getIntent().getSerializableExtra(MainActivity.EXTRA_MESSAGE);
-
+            actualMedia = media;
         }
 
         TextView nameTextView = (TextView)findViewById(R.id.mediaIntent_editName);
@@ -50,6 +53,13 @@ public class MediaIntent extends AppCompatActivity{
 
        Integer mediaID = media.getId();
 
+
+    }
+    public void saveData(View view){
+        /*
+        TextView beschreibungEdit = (TextView)findViewById(R.id.mediaIntent_beschreibungEdit);
+        actualMedia.setBescheibung(beschreibungEdit.getText().toString());
+        */
 
     }
 
