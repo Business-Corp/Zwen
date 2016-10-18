@@ -100,4 +100,14 @@
         android:layout_toRightOf="@+id/mediaIntent_imageView2"
         android:layout_toEndOf="@+id/mediaIntent_imageView2" />
 
+    <Button
+        android:text="save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7"
+        android:id="@+id/mediaIntent_ButtonSave"
+        android:onClick="saveData (MediaIntent)" />
+
 </RelativeLayout>
