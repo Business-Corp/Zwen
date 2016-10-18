@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase db = openOrCreateDatabase("Zwen", MODE_PRIVATE, null);
 
-        db.execSQL("DROP TABLE IF EXISTS Zwen.Media");
+        //db.execSQL("DROP TABLE IF EXISTS Zwen.Media");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS Media(ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Name VARCHAR NOT NULL, Subtitle VARCHAR, Typ INTEGER, Beschreibung TEXT);");
         Integer integer = R.drawable.movie;
-        db.execSQL("INSERT INTO Media (Name, Subtitle, Typ, Beschreibung) VALUES ('TestFilm','subTestTitel',"+integer+",'Testbeschreibung und so');");
+
 
         Cursor resultSet = db.rawQuery("SELECT * FROM Media", null);
 
@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         }else{
 
-            db.execSQL("INSERT INTO Media (Name, Subtitle, Typ) VALUES ('TestFilm','subTestTitel',"+integer+");");
+            db.execSQL("INSERT INTO Media (Name, Subtitle, Typ, Beschreibung) VALUES ('TestFilm','subTestTitel',"+integer+",'Testbeschreibung und so');");
+            //db.execSQL("INSERT INTO Media (Name, Subtitle, Typ) VALUES ('TestFilm','subTestTitel',"+integer+");");
         }
 
 
